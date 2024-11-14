@@ -1,0 +1,17 @@
+.outside{
+    background-color: black;
+}
+.dinner {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10px;
+}
+.searching{
+    border: 2px solid teal;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+h2{
+    margin-top: -10px;
+}

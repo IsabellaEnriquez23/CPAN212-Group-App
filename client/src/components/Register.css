@@ -1,0 +1,62 @@
+.wood{
+    background-color: black;
+}
+.concert {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 600px;
+}
+.registerInfo {
+    border: 2px solid teal;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 5px;
+}
+.message {
+    font-size: 45px;
+    margin-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: teal;
+}
+.registerInfo label {
+    color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+.registerInfo input {
+    width: 40%; /* Make the inputs take full width */
+    max-width: 600px; /* Limit width of inputs for readability */
+    height: 35px; /* Set consistent input height */
+    text-align: center;
+}
+.registerInfo .button {
+    margin-right: 10px;
+}
+.button {
+    background-color: grey;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 40%;
+}
+
+button:hover {
+    background-color:#306075;
+}
+.already {
+    color: #306075;
+}
+.login-word:hover {
+    color: grey;
+}
+.login-word{
+    color: rgb(0, 150, 150);
+}
