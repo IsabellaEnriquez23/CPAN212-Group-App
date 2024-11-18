@@ -25,22 +25,22 @@ const EditProfile = () => {
 
                     <Card.Title>Events you are interested in</Card.Title>
                     <div style={{display:"flex", flexDirection:'row', justifyContent: "center", flexWrap: "wrap"}}>
-                        <input type="checkbox" id="tag" name="tag" value="Party"/>
-                        <label for="tag"> Party</label><br/>
-                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"/>
-                        <label for="vehicle2"> Art</label><br/>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                        <label for="vehicle3"> Active</label>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                        <label for="vehicle3"> Educational</label>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                        <label for="vehicle3"> Cultural</label>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                        <label for="vehicle3"> Religious</label>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                        <label for="vehicle3"> Health & Wellness</label>
-                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"/>
-                        <label for="vehicle3"> Networking</label>
+                    <input type="checkbox" id="party" name="party" value="Party"/>
+                        <label for="party"> Party</label><br/>
+                        <input type="checkbox" id="art" name="art" value="Car"/>
+                        <label for="art"> Art</label><br/>
+                        <input type="checkbox" id="active" name="active" value="Boat"/>
+                        <label for="active"> Active</label>
+                        <input type="checkbox" id="educ" name="educ" value="Boat"/>
+                        <label for="educ"> Educational</label>
+                        <input type="checkbox" id="cultural" name="cultural" value="Boat"/>
+                        <label for="cultural"> Cultural</label>
+                        <input type="checkbox" id="relig" name="relig" value="Boat"/>
+                        <label for="relig"> Religious</label>
+                        <input type="checkbox" id="health" name="health" value="Boat"/>
+                        <label for="health"> Health & Wellness</label>
+                        <input type="checkbox" id="network" name="network" value="Boat"/>
+                        <label for="network"> Networking</label>
                     </div>
                     <br/>
                     <Button class="save" variant="primary">Save</Button>

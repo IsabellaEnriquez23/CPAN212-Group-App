@@ -22,13 +22,13 @@ function App() {
         <Router>
         <div class="nav-container">
           <div class="nav-left">
-            <h2 id='logo'><Link id='logoLink' to="/" style={{textDecoration: 'none'}}>Events4U</Link></h2>
+            <h2 id='logo'><Link id='logoLink' to="/home" style={{textDecoration: 'none'}}>Events4U</Link></h2>
             {/* <h2 id='logo' component={Link} to={"/"} style={{textDecoration: 'none'}}>Events4U</h2> */}
             <input id="search" type="text"  placeholder="Search for Events"/>
             <button className='search-button'>Search</button>
           </div>
           <nav class='nav-bar'>
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
             <Link to="/myevents">My Events</Link>
             <Link to="/profile">Profile</Link>
             <Link to="/login" className="login-link">Login</Link>
@@ -36,6 +36,7 @@ function App() {
         </div>
           <Routes>
           <Route path='/' element={<Search/>}/>
+          <Route path='/home' element={<Search/>}/>
           <Route path='/myevents' element={<MyEvents/>}/>
           <Route path='/profile' element={<Profile/>}/>
           <Route path='*' element={<NotFound/>}/>

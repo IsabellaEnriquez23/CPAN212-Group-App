@@ -9,7 +9,7 @@ const NotFound = () => {
     }
 
     return (
-        <div>
+        <div style={{'backgroundColor': 'black'}}>
             <h1 style={ {'font-family':"Verdana, Arial, sans-serif",
             color: '#00008B'} }>404 - Page Not Found</h1>
             <div>
@@ -19,6 +19,7 @@ const NotFound = () => {
                     <span style={ {color: '#00008B'} }>Click <Link to={navigate('/')} id='linkHome'>Here</Link> to 
                     return to Home</span></p>
             </div>
+            <img src="../images/dinner.jpg" alt="dinner" className= "dinner"/>
         </div>
     )
 }

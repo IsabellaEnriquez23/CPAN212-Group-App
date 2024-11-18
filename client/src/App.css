@@ -5,6 +5,7 @@ into it, but can't seem to figure out how to use both. Try commenting it out and
 .App {
   text-align: center;
   font-family: Verdana, Arial, sans-serif;
+  color: grey;
 }
 
 .nav-container {

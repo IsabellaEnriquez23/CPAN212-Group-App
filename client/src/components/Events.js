@@ -4,9 +4,22 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 // import Button from 'react-bootstrap/Button';
 import "./Events.css";
+import React, {useState, useEffect} from 'react'
+// import axios from 'axios'
 
 const Events = () => {
     const navigate = useNavigate()
+    const [events, setEvents] = useState(null)
+
+    // useEffect(() => {
+    //     axios.get('http://localhost:8000/events')
+    //         .then((response) => {
+    //             setEvents(response.data)
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching events: ', error)
+    //         })
+    // })
 
     const details = () => {
         //will eventually do with parameter //details/:id

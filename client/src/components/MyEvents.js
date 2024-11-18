@@ -25,7 +25,7 @@ const MyEvents = () => {
                 <Row>
                     <Col sm={3}>
                     <Nav className="flex-column" style={{fontSize:"1.3em"}}>
-                        <Image src={require("../images/emptypfp.jpg")} style={{width: "100px", height: "auto", cursor: "pointer", marginLeft: "108px" }} onClick={goToProfile} roundedCircle />
+                        <Image src={require("../images/emptypfp.jpg")} style={{width: "100px", height: "auto", cursor: "pointer", marginLeft: "83px" }} onClick={goToProfile} roundedCircle />
                         {/* couldnt figure out how to center pfp */}
                         <h5>username</h5>
                         <Button variant="primary" style={{marginTop:"10px", marginBottom:"10px", fontSize:"1em", color: "rgba(241, 194, 153, 0.9)", backgroundColor: "grey"}} onClick={goToEdit}>+ New Event</Button>
@@ -47,12 +47,15 @@ const MyEvents = () => {
                     <Tab.Content>
                         <Tab.Pane eventKey="first">
                             First tab content
+                            <Events />
                         </Tab.Pane>
                         <Tab.Pane eventKey="second">
                             Second tab content
+                            <Events />
                         </Tab.Pane>
                         <Tab.Pane eventKey="third">
                             Third tab content
+                            <Events />
                         </Tab.Pane>
                         <Tab.Pane eventKey="fourth">
                             {/* If you click on Previous Events, will show a preview of what event cards will look like */}

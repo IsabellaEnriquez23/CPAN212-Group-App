@@ -3,9 +3,22 @@ import {Image} from "react-bootstrap"
 import Events from "./Events"
 import "./Profile.css"
 import EditProfile from "./EditProfile"
+import React, {useState, useEffect} from 'react'
+// import axios from 'axios'
 
 const Profile = () => {
     const navigate = useNavigate()
+    
+    // useEffect(() => {
+    //     axios.get(`http://localhost:8000/profile/${id}`)
+    //         .then((response) => {
+    //             setEvents(response.data)
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching profile: ', error)
+    //         })
+    // })
+    
     const editProfile = () => {
         navigate(`/editProfile`)
     }
