@@ -1,3 +1,4 @@
+//we had some issues with using this file and routes/events.js, so we don't use them and use eventController2.js instead
 const Event = require('../models/Event')
 const { createCustomError } = require('../errors/customError')
 const asyncWrapper = require('../middleware/async')

@@ -4,7 +4,6 @@ const EventSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    maxlength: 300,
   },
   fromDate: {
     type: Date,
@@ -31,14 +30,19 @@ const EventSchema = new mongoose.Schema({
   },
   monetaryType: {
     type: String,
+    required: true,
   },
-  tags: {
-    type: Array,
+  tags: [{
+    type: String,
+  }],
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
   },
-  userId: {
-    type: String
-  }
 
 })
 
-module.exports = mongoose.model('Event', EventSchema)
+const Event = mongoose.model('Event', EventSchema);
+
+module.exports = Event;

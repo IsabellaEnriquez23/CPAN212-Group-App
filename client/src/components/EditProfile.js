@@ -3,10 +3,29 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useState } from "react";
 import "./EditEvent.css"; //use same css as editEvents
+import axios from 'axios';
 
-const EditProfile = () => {
-    const [username, setUsername] = useState ('')
+const EditProfile = (props) => {
     const navigate = useNavigate()
+    const [description, setDescription] = useState ('Empty Description')
+    const [error, setError] = useState ('')
+    const [password, setPassword] = useState('')
+
+    const submit = async (e) => {
+        e.preventDefault();
+        
+        if (!(description)){
+            setError("Please fill your description")
+        }
+        else{
+            try {
+                await axios.post('/profile', {description, password}, { withCredentials: true });
+                navigate(`/profile`)
+            } catch (error) {
+                console.error('Error registering:', error);
+            }
+        }
+    }
 
     return(
         <div className="wood">
@@ -16,14 +35,15 @@ const EditProfile = () => {
                 <Card.Body>
                     <Card.Img variant="top" src={require("../images/emptypfp.jpg")} style={{width:"20%", height:"auto"}}/>
                     <br/><br/>
-                    <Button class="upload-image" variant="primary">+ Upload Image</Button>
+                    {/* <Button class="upload-image" variant="primary">+ Upload Image</Button> */}
                     <Card.Title>Username</Card.Title>
-                    <input id="username" type="text"  value={username} onChange={(e)=> {setUsername(e.target.value)}}/>
+                    <p>{props.user.username}</p>
                     
                     <Card.Title>Description</Card.Title>
-                    <textarea id="w3review" name="w3review" rows="4" cols="50">Write something about yourself.</textarea>
+                    <textarea id="description" name="description" rows="4" cols="50" value={description}
+                    onChange={(e)=> {setDescription(e.target.value)}}></textarea>
 
-                    <Card.Title>Events you are interested in</Card.Title>
+                    {/* <Card.Title>Events you are interested in</Card.Title>
                     <div style={{display:"flex", flexDirection:'row', justifyContent: "center", flexWrap: "wrap"}}>
                     <input type="checkbox" id="party" name="party" value="Party"/>
                         <label for="party"> Party</label><br/>
@@ -41,9 +61,12 @@ const EditProfile = () => {
                         <label for="health"> Health & Wellness</label>
                         <input type="checkbox" id="network" name="network" value="Boat"/>
                         <label for="network"> Networking</label>
-                    </div>
+                    </div> */}
                     <br/>
-                    <Button class="save" variant="primary">Save</Button>
+                    <div style={ {height: '30px'} }>
+                        {error && <p style={{ color: 'darkred' }}><b>{error}</b></p>}
+                    </div>
+                    <Button class="save" variant="primary" onClick={submit}>Save</Button>
                 </Card.Body>
                 </Card>
         </div>

@@ -1,6 +1,7 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import './Login.css';
+import axios from 'axios'
 
 const Login = (props) => {
     const [username, setUsername] = useState ('')
@@ -12,19 +13,30 @@ const Login = (props) => {
         if (!(username && password)){
             setError("Please enter your username and password!")
         }
-        else if(!(username in props.accounts)){
-            setError("Username does not exist.")
-        }
-        else if(props.accounts[username].password != password){
-            setError("Incorrect Password.")
-        }
-        else{
-            props.setCurrAccount(username)
-            navigate(`/newsletter/${username}`)
-        }
+        // else if(!(username in props.accounts)){
+        //     setError("Username does not exist.")
+        // }
+        // else if(props.accounts[username].password != password){
+        //     setError("Incorrect Password.")
+        // }
+        // else{
+        //     props.setCurrAccount(username)
+        //     navigate(`/newsletter/${username}`)
+        // }
     }
     const signup = () => {
         navigate(`/register`)
+    }
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('/login', { username, password }, { withCredentials: true });
+            console.log('hit login')
+            window.location.href = '/'; //need to do so it refreshes and shows login
+        } catch (error) {
+            console.error('Error logging in:', error);
+        }
     }
 
     return(
@@ -44,7 +56,7 @@ const Login = (props) => {
             <div style={ {height: '50px', padding:'12px'} }>
                 {error && <p style={{ color: 'darkred' }}><b>{error}</b></p>}
             </div>
-            <button class='button' onClick={login}>Login</button>
+            <button class='button' onClick={handleLogin}>Login</button>
             <br/><br/>
             <p className="signup2"><b>Don't have an account with us? </b> 
             <b><span className='signup' onClick={signup}>Sign Up</span></b></p>
